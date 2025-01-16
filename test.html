@@ -1,0 +1,66 @@
+<!-- Numerical buttons -->
+<button class="num-btn" value="5" data-key="btn1">5</button>
+<button class="num-btn" value="10" data-key="btn2">10</button>
+<button class="num-btn" value="15" data-key="btn3">15</button>
+
+<!-- Calculation Result Display -->
+<div id="result"></div>
+
+<script>
+  // Function to store or remove data in localStorage
+  function toggleData(value, key) {
+    let storedData = JSON.parse(localStorage.getItem('selectedNumbers')) || {};
+
+    if (storedData[key]) {
+      // If the key exists, remove it (deselect)
+      delete storedData[key];
+    } else {
+      // If the key doesn't exist, add it (select)
+      storedData[key] = value;
+    }
+
+    // Update localStorage with the new data
+    localStorage.setItem('selectedNumbers', JSON.stringify(storedData));
+  }
+
+  // Function to perform calculations with stored data
+  function calculateData() {
+    let storedData = JSON.parse(localStorage.getItem('selectedNumbers')) || {};
+    let total = Object.values(storedData).reduce((acc, num) => acc + num, 0);  // Sum of all selected numbers
+    document.getElementById('result').textContent = `Total: ${total}`;
+  }
+
+  // Function to toggle button appearance based on selection
+  function toggleButtonAppearance(button, key) {
+    let storedData = JSON.parse(localStorage.getItem('selectedNumbers')) || {};
+    if (storedData[key]) {
+      button.style.backgroundColor = 'lightgreen'; // Indicate selection
+    } else {
+      button.style.backgroundColor = ''; // Reset appearance
+    }
+  }
+
+  // Event listener for numerical buttons
+  document.querySelectorAll('.num-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const value = parseInt(e.target.value);
+      const key = e.target.getAttribute('data-key'); // Unique key for the button
+
+      // Toggle data in localStorage
+      toggleData(value, key);
+
+      // Toggle button appearance based on selection
+      toggleButtonAppearance(e.target, key);
+
+      // Recalculate and display the total
+      calculateData();
+    });
+
+    // Optionally, toggle button appearance on page load (in case there is existing data in localStorage)
+    const key = button.getAttribute('data-key');
+    toggleButtonAppearance(button, key);
+  });
+
+  // Initial calculation and display on page load
+  calculateData();
+</script>

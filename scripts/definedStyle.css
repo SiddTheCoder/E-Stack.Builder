@@ -1,0 +1,77 @@
+main .section{
+    height: auto;
+    width: 100%;
+    background-color: rgb(45, 29, 0);
+}
+main .section-title{
+    margin-left: 11px;
+    height: auto;
+    width: max-content;
+    background-color: orange;
+    padding-inline: 20px;
+    font-size: 20px;
+    border-radius: 1px;
+    font-weight: 600px;
+    cursor: pointer;
+}
+main .items-container{
+    padding: 10px;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+main .item{
+    background-color: slateblue;
+    min-width: 300px;
+    min-height: 400px;
+    max-width: 350px;
+    max-height: auto;
+    visibility: inherit;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+}
+
+/* .item-img{
+    flex-grow: 1;
+    height: 60%;
+    width: 100%;
+} */
+
+.item-details{
+    padding: 3px;
+    background-color: #fff;
+    flex-grow: 1;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.item-footer{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 50px;
+}
+.item-price{
+  font-size: 21px;
+  color: purple;
+}
+.item-add-to-cart{
+    padding: 1px 10px;
+    background-color: orange;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.item-added-to-cart{
+    transition: all 250ms ease-out;
+    padding: 1px 10px;
+    background-color: rgb(145, 2, 184);
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}

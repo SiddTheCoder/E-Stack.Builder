@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes fadeIn {
+           0%{
+            opacity: 0;
+            transform: translateY(-100%);
+           }
+           25%{
+            opacity: 0.25;
+            transform: translateY(-75%);
+           }
+           50%{
+            opacity: 0.5;
+            transform: translateY(-50%);
+           }
+           75%{
+            opacity: 0.75;
+            transform: translateY(-25%);
+           }
+           100%{
+            opacity: 1;
+            transform: translateY(0%);
+           }
+        }
+        .cart-container{
+            border-radius: 5px;
+            position: absolute;
+            left: 150px;
+            min-height: 650px;
+            height: 90vh;
+            width: 80%;
+            margin: auto;
+            background-color: rgb(4, 0, 42);
+            padding: 15px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            animation: fadeIn 200ms ease-in;
+        }
+        .cart-item{
+         height: auto;
+         padding: 5px 4px;
+         width: 95%;
+         background-color: #ffffff06;
+         color: white;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         border-radius: 5px;
+        }
+        .cart-item-quantity{
+            color: white;
+            margin-left: 400px;
+            font-size: 15px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-item-price{
+            color: orange;
+            font-size: 15px;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-footer{
+            bottom: 10px;
+            position: absolute;
+            width: 95%;
+            height: auto;
+            padding: 5px 10px;
+            background-color: #ffffff16;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-footer-right{
+            display: flex;
+            gap: 150px;
+        }
+        .cart-footer-closer{
+            background-color: rgb(255, 111, 0);
+            color: white;
+            width: max-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: small;
+        }
+        .cart-total-btn{
+            background-color: orange;
+            color: white;
+            width: max-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: large;
+        }
+        .cart-buy-btn{
+            background-color: orange;
+            color: white;
+            width: max-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-item">
+            <div class="cart-item-img">Hello</div>
+            <div class="cart-item-title">GTA Sanandreas</div>
+            <div class="cart-item-quantity">
+                <p>Quantity :</p>
+                <h3>1</h3>
+            </div>
+            <div class="cart-item-price">
+                <p>Price</p>
+                <h2>Rs. 4000</h2>
+            </div>
+        </div>
+      
+        <div class="cart-footer">
+           <div class="cart-footer-closer">Close</div>
+           <div class="cart-footer-right">
+            <div class="cart-total-btn">Total</div>
+            <div class="cart-buy-btn">Buy</div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
